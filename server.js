@@ -3,6 +3,13 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
+
+
+
+
+
+
+
 const {
   userJoin,
   getCurrentUser,
@@ -28,6 +35,8 @@ io.on('connection', socket => {
 
     // Welcome current user
     socket.emit('message', formatMessage(botName, "Welcome to Let's Talk!"));
+    // audio.play();
+
 
     // Broadcast when a user connects
     socket.broadcast
